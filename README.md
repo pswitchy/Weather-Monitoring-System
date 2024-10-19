@@ -11,7 +11,6 @@
 8. [API Integration](#api-integration)
 9. [Testing](#testing)
 10. [Contributing](#contributing)
-11. [License](#license)
 
 ## Introduction
 
