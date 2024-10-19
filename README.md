@@ -62,7 +62,7 @@ weather-monitoring-system/
 
 1. Clone the repository:
    ```
-   git clone https://github.com/pswitchy/weather-monitoring-system.git
+   git clone https://github.com/pswitchy/Weather-Monitoring-System.git
    cd weather-monitoring-system
    ```
 
