@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# Weather Monitoring System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Project Structure](#project-structure)
+5. [Setup and Installation](#setup-and-installation)
+6. [Usage](#usage)
+7. [Components](#components)
+8. [API Integration](#api-integration)
+9. [Testing](#testing)
+10. [Contributing](#contributing)
+11. [License](#license)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+The Weather Monitoring System is a real-time data processing application designed to monitor weather conditions across multiple cities in India. It provides summarized insights using rollups and aggregates, offering users an intuitive interface to track current weather conditions, view historical trends, and receive alerts for extreme weather events.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Real-time weather data retrieval from OpenWeatherMap API
+- Display of current weather conditions for multiple cities
+- Daily weather summaries with temperature trends
+- Configurable alerting system for extreme weather conditions
+- Interactive charts for visualizing weather data
+- Responsive design for various device sizes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React.js (v18.3.1)
+- Material-UI (MUI v5)
+- Chart.js and react-chartjs-2 for data visualization
+- Axios for API requests
+- Jest and React Testing Library for testing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+```
+weather-monitoring-system/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   ├── WeatherDashboard.js
+│   │   ├── DailySummary.js
+│   │   └── AlertSystem.js
+│   ├── utils/
+│   │   └── weatherUtils.js
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.js
+│   ├── config.js
+│   └── setupTests.js
+├── package.json
+├── README.md
+└── .gitignore
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup and Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+   ```
+   git clone https://github.com/pswitchy/weather-monitoring-system.git
+   cd weather-monitoring-system
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-### `npm run eject`
+3. Create a `.env` file in the root directory and add your OpenWeatherMap API key:
+   ```
+   REACT_APP_OPENWEATHERMAP_API_KEY=your_api_key_here
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application should now be running on `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+After starting the application, you will see the main dashboard displaying current weather conditions for the configured cities. The daily summary section shows temperature trends over time, and the alert system notifies you of any extreme weather conditions.
 
-## Learn More
+To configure the cities monitored or adjust alert thresholds, modify the `src/config.js` file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### WeatherDashboard
 
-### Code Splitting
+Displays current weather conditions for each monitored city, including temperature, feels-like temperature, and weather condition icons.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### DailySummary
 
-### Analyzing the Bundle Size
+Shows a line chart of daily temperature trends (average, maximum, and minimum) and the dominant weather condition for the day.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### AlertSystem
 
-### Making a Progressive Web App
+Manages and displays weather alerts based on configurable thresholds.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## API Integration
 
-### Advanced Configuration
+This project uses the OpenWeatherMap API to fetch real-time weather data. The API calls are managed in the `src/utils/weatherUtils.js` file. Make sure to replace the API key in the `.env` file with your own key from OpenWeatherMap.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Testing
 
-### Deployment
+Run the test suite using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+npm test
+```
 
-### `npm run build` fails to minify
+This will run all tests defined in files with the `.test.js` extension.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Contributions to the Weather Monitoring System are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-branch-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-branch-name`
+5. Submit a pull request
+
+For any additional questions or support, please open an issue in the GitHub repository.
